@@ -116,7 +116,6 @@ app.get('/status/:id', async (req, res) => {
             "module": data.name,
             "builds": {}
         }
-        console.log(data);
         Object.keys(data.versions).forEach(version => {
             result.builds[version] = {
                 "status": data['dist-tags']?.latest === version ? 'ok' : 'failed',
